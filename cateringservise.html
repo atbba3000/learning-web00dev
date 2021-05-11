@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YOUR_MEALS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--JAVASCRIPT-->
+<script> document.addEventListener("DOMContentLoaded", function(event) 
+    {
+
+
+const cartButtons = document.querySelectorAll('.cart-button');
+
+cartButtons.forEach(button => {
+
+button.addEventListener('click',cartClick);
+
+});
+
+function cartClick(){
+let button =this;
+button.classList.add('clicked');
+}
+function cartclick(){
+  let button =this;
+  button.classlist.add('clicked');
+}
+});
+$(document).ready(function(){
+
+var quantitiy=0;
+   $('.quantity-right-plus').click(function(e){
+        
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+            
+            $('#quantity').val(quantity + 1);
+
+          
+            // Increment
+        
+    });
+
+     $('.quantity-left-minus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+      
+            // Increment
+            if(quantity>0){
+            $('#quantity').val(quantity - 1);
+            }
+    });
+    
+});
+$(document).ready(function(){
+  var quant=0;
+    $('inc').click(function(e){
+      e-preventDefault();
+      var quant=parseInt($('#quant').val());
+      $('#quant').val(quant+1);
+
+    });
+    $('dec').click(function(e){
+      e.preventDefault();
+      var quant=parseInt($('#quant').val());
+      if(quantity>0){
+        $('#quant').val(quant-1);
+
+      }
+    });
+
+});
+//search funtion
+function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName('li');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsById("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+
+</script>
+<!--CSSSTYLING-->
+<STYLE>
+/* Remove the jumbotron's default bottom margin */ 
+.jumbotron {
+ margin-bottom: 0;
+ background-image:url("menu.jpg");
+ background-size: 100%;
+ text-align: center;
+ color: white;
+}
+footer {
+      background-color:black;
+      padding: 25px;
+    }
+.pe{
+    text-align: center;
+     background-image:url(men.jpg);
+     color: black;
+}
+
+.atc {
+  display:inline-block;
+  padding:1em 2em;
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(5, 5, 5, 0.856);
+  border-radius: 2em;
+  box-sizing:border-box;
+  text-decoration: none;
+  font-family:'roboto',sans-sarif;
+  font-weight:bold;
+  font-size: large;
+  color:black;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+  background-color:rgb(250, 184, 78);
+  align-self: center;
+}
+.atc:hover{
+  border-color:black;
+  background-color:#ffed4b;
+}
+.panel-footer{
+  background: linear-gradient(110deg,#fdcd3b 60%,#ffed4b 60%);
+  
+}
+.panel-heading{
+  background: linear-gradient(110deg,#fdcd3b 60%,#ffed4b 60%);
+  font-size: x-large;
+  font-family:'roboto',sans-serif;
+  font-weight: bold;
+}
+.no{
+visibility: hidden;
+
+.nav{
+  background-color: black;
+}
+
+.num{
+  margin-right:200px;
+}
+</style>
+</head>
+<body>
+<!--JUMBOTRON-->
+<div class="jumbotron" >
+    <div class="container text-center">
+        <h1 class="pe"> MENU </h1> 
+    </div>
+</div>
+<!--nav bar-->
+<nav class="navbar navbar-inverse" id="nav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+                <!--kart logo-->
+            <a class="navbar-brand" href="cart.html" ><img src="cart.svg" class="re" ></a>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <!--<ul class="nav navbar-nav">-->
+         <ul class="nav navbar-nav navbar-right">
+        <li><a href="deals.html">kart</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><input id="myInput" onkeyup="myFunction()" class="form-control mr-sm-1" type="text" placeholder="Search for meal" aria-label="Search"></li>
+        <li><a href=""><button id="rt"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></a></li>
+        </ul>
+    </div>
+    </div>
+  </nav>
+  <!--container-->
+
+  <!--container-->
+  <div class="col-sm-4"> 
+    <div class="panel panel-success">
+      <div class="panel-heading"id="Masala-Tea">Masala Tea </div>
+      <div class="panel-body"><img src="tea.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      <div class="panel-footer"><button class="atc">ADD TO CART</button><input type="number" min="0" max="50" id="num">
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4"> 
+    <div class="panel panel-success">
+      <div class="panel-heading"id="samosa">samosa</div>
+      <div class="panel-body"><img src="samosa.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      <div class="panel-footer"><button class="atc">ADD TO CART</button><br><button>+</button><input type="number" min="0" max="50"><button>-</button></a></div>
+    </div>
+  </div>
+  <div class="col-sm-4"> 
+    <div class="panel panel-success">
+      <div class="panel-heading"id="egg-roll">Egg roll </div>
+      <div class="panel-body"><img src="egg.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      <div class="panel-footer"><button class="atc">ADD TO CART</button><br><button>+</button><input type="number"min="0" max="50"><button>-</button></div>
+    </div>
+  </div>
+  <div class="col-sm-4"> 
+    <div class="panel panel-success">
+      <div class="panel-heading"id="noodels">Noodels </div>
+      <div class="panel-body"><img src="noodles.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      <div class="panel-footer"><button class="atc">ADD TO CART</button><br><button id="inc">+</button><input type="number" min="0" max="0"><button id="dec">-</button></div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--footer...-->
+    <footer class="container-fluid text-center">
+    <a href="copyright.html"><p>© Online Store Copyright © </p></a>  
+  </footer> 
+</body>
+</html>
